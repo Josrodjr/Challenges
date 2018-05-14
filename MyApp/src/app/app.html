@@ -5,9 +5,10 @@
 
 
 <ion-list>
-      <button ion-item (click)="openPage(HomePage)">
+      <button ion-item (click)="openPage(FirstPage)">
         Home
       </button>
+
       <button ion-item (click)="openPage(friendsPage)">
         Friends
       </button>
@@ -15,7 +16,12 @@
         Events
       </button>
       
+
+      
       <button ion-item menuClose >Close Menu</button>
+      <button ion-item (click)="openPage(HomePage)">
+        Log Out
+      </button>
     </ion-list>
 
 </ion-content>

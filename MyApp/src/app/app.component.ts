@@ -16,6 +16,7 @@ import {FirstPage} from '../pages/first/first' ;
 export class MyApp {
   rootPage:any = HomePage;
   HomePage = HomePage;
+  FirstPage = FirstPage;
 
    @ViewChild('nav') nav:NavController; 
 
