@@ -9,6 +9,7 @@ import { ViewChild } from '@angular/core';
 
 import { HomePage } from '../pages/home/home';
 import {FirstPage} from '../pages/first/first' ;
+import {ActivitiesPage} from '../pages/activities/activities' ;
 
 @Component({
   templateUrl: 'app.html'
@@ -17,6 +18,7 @@ export class MyApp {
   rootPage:any = HomePage;
   HomePage = HomePage;
   FirstPage = FirstPage;
+  ActivityPage = ActivitiesPage;
 
    @ViewChild('nav') nav:NavController; 
 
