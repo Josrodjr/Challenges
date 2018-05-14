@@ -15,16 +15,22 @@ import {FirstPage} from '../pages/first/first' ;
 })
 export class MyApp {
   rootPage:any = HomePage;
+  HomePage = HomePage;
 
-   @ViewChild(Nav) nav:NavController; 
+   @ViewChild('nav') nav:NavController; 
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private menuCtrl: MenuController) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
     });
+  }
+
+  openPage(page: any){
+    this.nav.setRoot(page);
+    this.menuCtrl.close();
   }
 
   
