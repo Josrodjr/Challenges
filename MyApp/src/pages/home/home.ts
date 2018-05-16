@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 
 import { App, MenuController, AlertController } from 'ionic-angular';
 import {FirstPage} from '../first/first' ;
+import { RegisterPage } from '../register/register';
 
 
 @Component({
@@ -25,16 +26,8 @@ export class HomePage {
 
   signIn(){
   	//console.log(this.uname.value,this.password.value); 
-  	if(this.uname.value=="admin" && this.password.value=="admin"){
+    this.navCtrl.push(RegisterPage)
 
-  		 let alert = this.alertCtrl.create({
-      title: 'Sign In Request',
-      subTitle: 'This page is under construction!',
-      buttons: ['OK']
-    });
-    alert.present();
-
-  	}
   }
 
    LogIn(){

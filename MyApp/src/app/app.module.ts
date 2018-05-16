@@ -8,13 +8,16 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { FirstPage } from '../pages/first/first';
 import {ActivitiesPage} from '../pages/activities/activities' ;
+import { RegisterPage } from '../pages/register/register';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     FirstPage,
-    ActivitiesPage
+    ActivitiesPage,
+    RegisterPage
+
 
     
   ],
@@ -27,7 +30,8 @@ import {ActivitiesPage} from '../pages/activities/activities' ;
     MyApp,
     HomePage,
     FirstPage,
-    ActivitiesPage
+    ActivitiesPage,
+    RegisterPage
     
   ],
   providers: [
