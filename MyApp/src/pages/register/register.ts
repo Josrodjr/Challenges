@@ -1,5 +1,6 @@
 import { Component,ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 /**
  * Generated class for the RegisterPage page.
@@ -18,7 +19,7 @@ export class RegisterPage {
 	@ViewChild('username')uname;
 	@ViewChild('password')password;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private fire:AngularFireAuth,public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -26,6 +27,14 @@ export class RegisterPage {
   }
 
   registerUser(){
+  	this.fire.auth.createUserWithEmailAndPassword(this.uname.value,this.password.value)
+  	.then(data =>{
+  		console.log('got data',data);
+  	})
+  	.catch(error =>{
+  		console.log('got an error',error);
+
+  	});
 
 
   }
