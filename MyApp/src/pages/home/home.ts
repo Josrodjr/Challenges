@@ -33,7 +33,7 @@ export class HomePage {
   }
 
    LogIn(){
-    //console.log(this.uname.value,this.password.value); 
+    //console.log(this.uname.value,this.password.value);
     this.fire.auth.signInWithEmailAndPassword(this.uname.value,this.password.value)
     .then(data=>{
       this.alert('You are logged in!');
@@ -44,7 +44,7 @@ export class HomePage {
       console.log('got an error',error);
       this.alert(error.message);
 
-    }); 
+    });
   }
 
   alert(message: string){
