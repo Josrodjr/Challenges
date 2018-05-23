@@ -2,6 +2,8 @@ import { Component,ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams,AlertController } from 'ionic-angular';
 import { AngularFireAuth } from 'angularfire2/auth';
 
+import {HomePage} from '../home/home' ;
+
 /**
  * Generated class for the RegisterPage page.
  *
@@ -31,6 +33,7 @@ export class RegisterPage {
   	.then(data =>{
   		console.log('got data',data);
   		this.alert('Succesfully registered!');
+  		this.navCtrl.setRoot(HomePage);
   	})
   	.catch(error =>{
   		console.log('got an error',error);
