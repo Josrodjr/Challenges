@@ -1,5 +1,6 @@
 import { Component,ViewChild } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 import { App, MenuController, AlertController } from 'ionic-angular';
 import {FirstPage} from '../first/first' ;
@@ -18,31 +19,41 @@ export class HomePage {
 	@ViewChild('username')uname;
 	@ViewChild('password')password;
 
-  constructor(public navCtrl: NavController, public alertCtrl: AlertController) {
+  constructor(private fire:AngularFireAuth,public navCtrl: NavController, public alertCtrl: AlertController) {
 
 
 
   }
 
   signIn(){
-  	//console.log(this.uname.value,this.password.value); 
+  	//console.log(this.uname.value,this.password.value);
+
     this.navCtrl.push(RegisterPage)
 
   }
 
    LogIn(){
     //console.log(this.uname.value,this.password.value); 
-    if(this.uname.value=="admin" && this.password.value=="admin"){
+    this.fire.auth.signInWithEmailAndPassword(this.uname.value,this.password.value)
+    .then(data=>{
+      this.alert('You are logged in!');
+      this.navCtrl.setRoot(FirstPage);
 
-       let alert = this.alertCtrl.create({
-      title: 'Login Succesful!',
-      subTitle: 'You are logged in',
+    })
+    .catch(error=>{
+      console.log('got an error',error);
+      this.alert(error.message);
+
+    }); 
+  }
+
+  alert(message: string){
+    this.alertCtrl.create({
+       title: 'Info!',
+      subTitle: message,
       buttons: ['OK']
-    });
-    alert.present();
-    this.navCtrl.push(FirstPage);
-    
-    }
+    }).present();
+
   }
 
 }
