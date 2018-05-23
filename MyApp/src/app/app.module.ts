@@ -15,12 +15,12 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 
 const firebaseAuth = {
-    apiKey: "AIzaSyAdwezja3VhPT6LGapYw8mJH5K55RugqxI",
-    authDomain: "test-project-f114a.firebaseapp.com",
-    databaseURL: "https://test-project-f114a.firebaseio.com",
-    projectId: "test-project-f114a",
-    storageBucket: "test-project-f114a.appspot.com",
-    messagingSenderId: "858830460982"
+    apiKey: "AIzaSyAanbw2UY79dX_YHfMIxSUCQMMLa9e-7LQ",
+    authDomain: "ing-de-soft-8a683.firebaseapp.com",
+    databaseURL: "https://ing-de-soft-8a683.firebaseio.com",
+    projectId: "ing-de-soft-8a683",
+    storageBucket: "",
+    messagingSenderId: "1042773694376"
   };
 
 @NgModule({
